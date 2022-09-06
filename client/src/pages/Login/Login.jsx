@@ -2,8 +2,8 @@ import { Layout } from "../../styled-components/Layout.styled"
 import { useEffect, useState } from "react"
 import jwt_decode from 'jwt-decode'
 import { useDispatch } from 'react-redux'
-import { getInfo } from '../../redux/actions/index'
 import { LoginDiv } from "./styled-components/LoginDiv.styled"
+import { LayoutResponsive } from "../../styled-components"
 
 const Login = () => {
 
@@ -31,12 +31,12 @@ const Login = () => {
     }, [user])
 
     return (
-        <Layout>
+        <LayoutResponsive>
             <LoginDiv>
                 <h2>Log In</h2>
                 <div id="signInDiv"></div>
             </LoginDiv>
-        </Layout>
+        </LayoutResponsive>
     )
 }
 

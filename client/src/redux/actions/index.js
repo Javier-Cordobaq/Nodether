@@ -1,13 +1,41 @@
 import axios from 'axios'
 
-export const GET_INFO = 'GET_INFO'
+export const GET_STEP_INFO = 'GET_STEP_INFO'
+export const GET_REPLY = 'GET_REPLY'
+export const GET_ALL_STEPS = 'GET_ALL_STEPS'
 
-export const getInfo = (info) => async dispatch => {
+export const getAllSteps = (json) => async dispatch => {
+    return dispatch({
+        type: GET_ALL_STEPS,
+        payload: json
+    })
+  /*   try {
+        const json = await axios.get(`http://localhost:3006/pasos`)
+        if (json.status === 200) {
+            return dispatch({
+                type: GET_ALL_STEPS,
+                payload: json.data
+            })
+        }
+    }
+    catch (error) {
+        console.log(error)
+    } */
+}
 
-    console.log(info)
+export const getStepInfoByKey = (info) => /* async */ dispatch => {
 
     return dispatch({
-        type: GET_INFO,
+        type: GET_STEP_INFO,
+        payload: info
+    })
+
+}
+
+export const getReplyByKey = (info) => /* async */ dispatch => {
+
+    return dispatch({
+        type: GET_REPLY,
         payload: info
     })
 
